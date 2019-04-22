@@ -5,7 +5,8 @@ html, body {
 
   stroke-width: none;
   font-size: 14px;
-  text-align: center;
+  text-align: left;
+
 
 }
 .container {
@@ -20,15 +21,15 @@ html, body {
 {
    position: absolute;
    left: 600px;
-   top: 750px
+   top: 550px
 }
 #tjo
 {
    position: absolute;
    left: 600 px;
-   top: 750px;
+   top: 550px;
    right:600 px;
-   margin-left: inherit<
+   padding-left:46px
 }
 .grid line {
 stroke: lightgrey;
@@ -61,7 +62,12 @@ svg{
 }
 h1 {color:red;
 font-family:helvetica;
-font-size: 42px;}
+font-size: 42px;
+padding-left:200px}
+h2 {color:red;
+font-family:helvetica;
+font-size: 32px;
+}
 p {font-family:helvetica;
 font-size:16px}
 

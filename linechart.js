@@ -1,9 +1,9 @@
 var parseTime = d3.timeParse("%d-%b-%y");
 
 // define width and height for chart
-var margin = {top: 30, right: 50, bottom: 30, left: 50},
+var margin = {top: 20, right: 50, bottom: 30, left: 50},
 width = 1200 - margin.left - margin.right,
-height = 600 - margin.top - margin.bottom;
+height = 400 - margin.top - margin.bottom;
 
 var x = d3.scaleTime().range([0,width]);
 var y = d3.scaleLinear().range([height,0]);
@@ -222,10 +222,44 @@ var datat = [
   {date:"23-Mar-15",kg:27.5,note:""},
   {date:"25-Mar-15",kg:27.5,note:""},
   {date:"27-Mar-15",kg:30,note:""},
-  {date:"30-Apr-15",kg:30,note:""},
+  {date:"30-Mar-15",kg:30,note:""},
   {date:"1-Apr-15",kg:30,note:""},
   {date:"3-Apr-15",kg:30,note:""},
   {date:"6-Apr-15",kg:30,note:""},
+  {date:"8-Apr-15",kg:30,note:""},
+  {date:"16-Apr-15",kg:30,note:""},
+  {date:"21-Apr-15",kg:30,note:""},
+  {date:"27-Apr-15",kg:32.5,note:""},
+  {date:"3-May-15",kg:32.5,note:""},
+  {date:"6-May-15",kg:32.5,note:""},
+  {date:"12-May-15",kg:32.5,note:""},
+  {date:"15-May-15",kg:35,note:""},
+  {date:"19-May-15",kg:35,note:""},
+  {date:"26-May-15",kg:35,note:""},
+  {date:"28-May-15",kg:35,note:""},
+  {date:"30-May-15",kg:35,note:""},
+  {date:"1-Jun-15",kg:37.5,note:""},
+  {date:"2-Jun-15",kg:37.5,note:""},
+  {date:"4-Jun-15",kg:40,note:""},
+  {date:"5-Jun-15",kg:40,note:""},
+  {date:"7-Jun-15",kg:40,note:""},
+  {date:"9-Jun-15",kg:40,note:""},
+  {date:"15-Jun-15",kg:40,note:""},
+  {date:"16-Jun-15",kg:42.5,note:""},
+  {date:"17-Jun-15",kg:42.5,note:""},
+  {date:"19-Jun-15",kg:45,note:""},
+  {date:"21-Jun-15",kg:45,note:""},
+  {date:"24-Jun-15",kg:45,note:""},
+  {date:"27-Jun-15",kg:50,note:""},
+  {date:"29-Jun-15",kg:50,note:""},
+  {date:"30-Jun-15",kg:50,note:""},
+  {date:"1-Jul-15",kg:52.5,note:""},
+  {date:"3-Jul-15",kg:52.5,note:""},
+  {date:"6-Jul-15",kg:55,note:""},
+
+
+
+
 
 
 
@@ -298,6 +332,7 @@ var myLine = d3.line()
   svg.selectAll("dot")
            .data(data)
          .enter().append("circle")
+          .attr("fill", "red")
            .attr("r", 1.5)
            .attr("cx", function(d) { return x(parseTime(d.date)); })
            .attr("cy", function(d) { return y(d.kg); })
