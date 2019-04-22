@@ -1,0 +1,65 @@
+html, body {
+  margin: 2;
+  height: 50%;
+  width: 100%;
+
+  stroke-width: none;
+  font-size: 14px;
+  text-align: center;
+
+}
+.container {
+  text-align: left;
+  float: left ;
+}
+#container
+{
+   position: relative
+}
+#hej
+{
+   position: absolute;
+   left: 600px;
+   top: 750px
+}
+#tjo
+{
+   position: absolute;
+   left: 600 px;
+   top: 750px;
+   right:600 px;
+   margin-left: inherit<
+}
+.grid line {
+stroke: lightgrey;
+stroke-opacity: 0.7;
+shape-rendering: crispEdges;
+}
+.legend {
+font-size: 16px;
+font-weight: bold;
+text-anchor: middle;
+}
+.grid path {
+stroke-width: 0;
+}
+.axis{
+  font-size: 12px;
+  font-family: helvetica; }
+.plot
+{
+    margin: 0 auto;
+}
+svg{
+    display: block;
+    margin: auto;
+  }
+.line {
+  fill: none;
+  stroke: red;
+  stroke-width: 1px;
+}
+h1 {color:red;
+font-family:helvetica}
+p {font-family:helvetica;
+font-size:16px}
