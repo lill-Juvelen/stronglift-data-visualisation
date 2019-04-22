@@ -1,12 +1,16 @@
 var parseTime = d3.timeParse("%d-%b-%y");
 
 // define width and height for chart
-var margin = {top: 30, right: 0, bottom: 30, left: 50},
+var margin = {top: 30, right: 50, bottom: 30, left: 50},
 width = 1200 - margin.left - margin.right,
 height = 600 - margin.top - margin.bottom;
 
 var x = d3.scaleTime().range([0,width]);
 var y = d3.scaleLinear().range([height,0]);
+
+var div = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
 var svg2 = d3.select("div").append(svg)
 .attr("width", width + margin.left + margin.right)
@@ -289,18 +293,24 @@ var myLine = d3.line()
 
 //scatter
 // set thme at data points
- svg.selectAll("dot")
-        .data(data)
-    .enter()
-    .filter(function(d,i) {return d.kg*i - d.kg*(i-1) > 10})
-    .append("circle")
-        .attr("class", "data-point")
-        .attr("cx", function(d) {return x(parseTime(d.date));})
-        .attr("cy", function(d) {return y(d.kg);})
-        .attr("r", 0.5)
-        .style("fill", "red");
 
-svg2.append("text")
-    .attr('x', 0-2*margin.left)
-    .attr('y', 30)
-    .text("ett nummer");
+
+  svg.selectAll("dot")
+           .data(data)
+         .enter().append("circle")
+           .attr("r", 1.5)
+           .attr("cx", function(d) { return x(parseTime(d.date)); })
+           .attr("cy", function(d) { return y(d.kg); })
+           .on("mouseover", function(d) {
+             div.transition()
+               .duration(200)
+               .style("opacity", .9);
+             div.html(formatTime(d.date) + "<br/>" + d.kg)
+               .style("left", (d3.event.pageX) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+             })
+           .on("mouseout", function(d) {
+             div.transition()
+               .duration(500)
+               .style("opacity", 0);
+             });
